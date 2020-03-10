@@ -1,0 +1,225 @@
+----------------------------------------
+cheat sheet
+----------------------------------------
+2020-03-10, 19:30
+----------------------------------------
+
+go_000_0000 Inhalt
+
+go_100_0000 ...
+go_200_0000 ...
+go_300_0000 ...
+
+go_400_0000 ...
+go_401_0010 redirect stdin stdout stderr
+go_401_0050 Random
+go_401_0060 Encryption
+
+go_500_0000 ...
+go_501_0010 FFMPEG
+
+go_600_0000 ...
+go_602_0010 go(lang) in docker
+go_603_0100 c# dotnet commands
+go_604_0100 java Lego Mindstorm
+
+go_700_0000 ...
+go_800_0000 ...
+go_900_0000 ...
+
+---:---:---
+---:---:---
+---:---:---
+go_400_0000 ...
+
+
+---:---:---
+go_401_0010 redirect stdin stdout stderr
+
+# see 
+$ start http://www.tldp.org/LDP/abs/html/io-redirection.html
+
+----------------------------------------
+
+1>filename
+  # Redirect stdout to file "filename."
+  
+1>>filename
+  # Redirect and append stdout to file "filename."
+  
+2>filename
+  # Redirect stderr to file "filename."
+  
+2>>filename
+  # Redirect and append stderr to file "filename."
+  
+&>filename
+  # Redirect both stdout and stderr to file "filename."
+  # This operator is now functional, as of Bash 4, final release.
+
+2>&1
+  # Redirects stderr to stdout.
+  # Error messages get sent to same place as standard output.
+  
+  >>filename 2>&1
+  
+  # If redirecting both stdout and stderr,
+  # the order of the commands makes a difference.
+  
+----------------------------------------
+
+# redirect stdout to file1, stderr to file2, stdout + stderr to file3
+$ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>&2 echo "4 hello error"); } 1> >(tee stdout.log) 2> >(tee stderr.log >&2); } >> all.log 2>&1
+
+# redirect stdout to mail 1, stderr to mail 2
+$ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>&2 echo "4 hello error"); } | mail -s "test stdout `date`" bwinkler@netmediaeurope.com; } 2>&1 | mail -s "test stderr `date`" bwinkler@netmediaeurope.com
+
+# redirect stdout to nothing, stderr to mail, stdout + stderr to file
+$ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>&2 echo "4 hello error"); } 1> >(tee stdout.log) 2> >(tee /dev/stderr | mail -s "test stderr `date`" bwinkler@netmediaeurope.com); } >> all.log 2>&1
+
+---:---:---
+go_401_0050 Random
+##random
+
+# get 12 random chars
+$ cat /dev/urandom | tr -cd 'a-zA-Z0-9.-' | head -c12
+
+# get 12 random bytes
+$ cat /dev/urandom | head -c12 | base64
+
+---:---:---
+go_401_0060 Encryption
+##openssl ##encrypt ##decrypt
+
+# encrypt files
+$ set +o history
+$ tar -cvf - * | bzip2 -9 | openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -in - -out - -e -k "my-secret-passwd" | base64 > files.tar.bz2.enc.b64.txt
+$ set -o history
+
+# decrypt files
+$ set +o history
+$ cat files.tar.bz2.enc.b64.txt | base64 -d | openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -in - -out - -d -k "my-secret-passwd" | bzip2 -d | tar -xvf -
+$ set -o history
+
+# openssl shortcut
+$ cat > opensslpipe.sh << EOF
+#!/bin/bash
+openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -in - -out - \${1} -k \${2}
+EOF
+
+# encrypt/decrypt files
+$ set +o history
+$ tar -cvf - * | bzip2 -9 | opensslpipe.sh -e "my-secret-passwd" | base64 > files.tar.bz2.enc.b64.txt
+$ cat files.tar.bz2.enc.b64.txt | base64 -d | opensslpipe.sh -d "my-secret-passwd" | bzip2 -d | tar -xvf - 
+$ set -o history
+
+# encrypt/decrypt (short) text
+$ set +o history
+$ echo 'a secret message' | opensslpipe.sh -e 'my-secret-passwd' | base64
+$ echo 'U2FsdGVkX1+OdddqCYCobh5tJL0hvX7eO/c0wi10yNfbbs73jgzNfdLj/MFVgl2z' | base64 -d | opensslpipe.sh -d 'my-secret-passwd'
+$ set -o history
+
+
+---:---:---
+go_500_0000 ...
+
+
+---:---:---
+go_501_0010 FFMPEG
+##ffmpeg
+
+# ffmpeg 12seconds
+$ ffmpeg -i MOV00199.avi -ss 00:00:09 flughafen.mpg
+
+$ ffmpeg -i 2008-trailer.avi -croptop 18 -cropbottom 18 -b 30000000 -ab 128 2008-trailer_540.mpg
+$ ffmpeg -i 2008-trailer_540.mpg -s 320x240 -b 400000 -ab 128 2008-trailer_320.mpg
+
+$ ffmpeg -i "H:20 Der dicke K?.avi" -acodec libmp3lame -ab 128k -ar 44100 -vcodec mpeg4 -b 512k -s 224x176 wickie-20-der-dicke-koenig.avi
+
+$ ffmpeg -i das_Schlossgespenst.mkv -s 320x240 -vb 400000 -ab 128000 c:das_Schlossgespenst.mpg
+$ ffmpeg -i 55_Wer_anderen_eine_Grube_graebt.avi -s 320x240 -vb 400000 -ab 128000 55_Wer_anderen_eine_Grube_graebt.mpg
+
+$ ffmpeg -i save-tv.avi -ss 00:06:52 -croptop 18 -cropbottom 18 -s 640x480 -vb 1000000 -ab 128000 ppc.mov
+$ ffmpeg -i vc2010_4970_Im_Blickfeld.avi -croptop 86 -cropbottom 86 -vb 1300000 -ab 128000 -ar 44100 vc2010_4970_Im_Blickfeld.mpeg
+$ ffmpeg -i vc2010_5011_Was_bringt_die_Zukunft.avi -vb 1300000 -ab 128000 -ar 44100 vc2010_5011_Was_bringt_die_Zukunft.mpeg
+$ ffmpeg -i vc2010_2917_vision2010-unbekannte-heimat.flv -vb 1300000 -ab 128000 -ar 44100 vc2010_2917_vision2010-unbekannte-heimat.mpeg
+
+$ ffmpeg -i vc2010_4878_Vision_2010_endv.wmv -s 580x326 -vb 1300000 -ab 128000 -ar 44100 vc2010_4878_Vision_2010_endv.mov
+
+$ ffmpeg -i TV-20090512-0448-1501.hi.flv -sameq -ss 00:03:12 -t 23 hubble-1.mpeg
+$ ffmpeg -i TV-20090519-1418-2201.hi.flv -sameq -ss 00:08:42 -t 24 hubble-2.mpeg
+$ cat hubble-1.mpeg hubble-2.mpeg > hubble-1-2.mpeg
+$ ffmpeg -i hubble-1-2.mpeg -sameq hubble.mpeg
+
+$ ffmpeg -i "06 No Tears Anymore.m4a" -ab 192000 "06 No Tears Anymore.mp3"
+$ ffmpeg -i "01 Speed of Sound.m4a" -ab 192000 "01 Speed of Sound.mp3"
+$ ffmpeg -i "16 21 Guns.m4a" -ab 192000 "16 21 Guns.mp3"
+$ ffmpeg -i "01 If a Song Could Get Me You.m4a" -ab 192000 "01 If a Song Could Get Me You.mp3"
+$ ffmpeg -i "08 Trouble Is a Friend.m4a" -ab 192000 "08 Trouble Is a Friend.mp3"
+$ ffmpeg -i "02 Locker macha (Explicit Lyrics).m4a" -ab 192000 "02 Locker macha (Explicit Lyrics).mp3"
+$ ffmpeg -i "02 Sweet About Me.m4a" -ab 192000 "02 Sweet About Me.mp3"
+$ ffmpeg -i "12 Mary's Boy Child.m4a" -ab 192000 "12 Mary's Boy Child.mp3"
+
+$ ffmpeg -i "E:\data-bjw\Music\iTunes\iTunes Music\Podcasts\Adam Curry's Daily Source Code\822 DSC-822-2010-03-19.mp3" -ab 192000 -ss 00:56:30 -t 480 dsc-822-beth-thornley.mp3
+
+# 00:33:16 - 00:04:46 = 1710sec
+$ ffmpeg -i We_Love_in_Concert_a_ha_Foot_of_the_Mountain_2009-06-19_01-35_180137.avi -ss 00:04:46 -t 1710 -ab 128000 -vb 1200000 aha-1.m4v
+$ ffmpeg -i a_ha_Documentary_Foot_of_the_Mountain_2009-06-28_01-10_180137.avi -ss 00:05:30 -t 5130 -ab 128000 -vb 1200000 aha-2.m4v
+
+
+---:---:---
+go_600_0000 ...
+
+
+---:---:---
+go_602_0010 go(lang) in docker
+##go ##golang
+
+# golang in docker (example 1)
+> docker run -i -t -v C:/projects/go:/go -p 8080:8080 --name golang golang
+> docker start -i golang
+
+$ go version
+$ go get github.com/golang/example/hello/...
+$ go run github.com/golang/example/hello
+$ go run github.com/golang/example/outyet
+$ export GOOS=windows GOARCH=amd64
+$ go install github.com/golang/example/hello
+
+
+# golang in docker (example 2)
+> docker run --rm -v "%CD%:/usr/src/sendtoeds" -w /usr/src/sendtoeds -e GO -e GOOS=windows -e GOARCH=amd64 golang bash -c "go get -d -v ./... && go fmt && go build -v"
+> docker run --rm -i -t -v "%CD%:/usr/src/sendtoeds" -w /usr/src/sendtoeds -e GO -e GOOS=windows -e GOARCH=amd64 golang bash
+> docker run --rm -it -p 8080:8080 -v "%CD%:/usr/src/publisher" -w /usr/src/publisher -e GOOS=linux -e GOARCH=amd64 golang bash -c "go get -d -v ./... && go fmt && go run publisher.go -port=8080 -phob=0YAy.TaLp.SVTr -phan=XhfN.DQ35.4R4t"
+
+
+
+---:---:---
+go_603_0100 c# dotnet commands
+##dotnetrun
+
+# .NET Command: format source code
+
+$ dotnet tool install -g dotnet-format
+$ dotnet format --dry-run --check
+$ echo $?
+
+> dotnet tool install -g dotnet-format
+> dotnet format --dry-run --check
+> Write-Host $LastExitCode
+
+
+
+---:---:---
+go_604_0100 java Lego Mindstorm
+##mindstorm
+
+# Lego Mindstorm: first program
+> start http://www.lejos.org/nxt/nxj/tutorial/Preliminaries/FirstProgram.htm
+
+> nxjc HelloWorld.java
+> nxjlink -o HelloWorld.nxj HelloWorld
+> nxjupload -r HelloWorld.nxj
+
+> nxjc HelloWorld.java
+> nxj -r -o HelloWorld.nxj HelloWorld
