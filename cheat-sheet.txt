@@ -14,6 +14,7 @@ go_400_0000 ...
 go_401_0010 redirect stdin stdout stderr
 go_401_0050 Random
 go_401_0060 Encryption
+go_401_0061 proof to be first author
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -119,6 +120,28 @@ $ echo 'a secret message' | opensslpipe.sh -e 'my-secret-passwd' | base64
 $ echo 'U2FsdGVkX1+OdddqCYCobh5tJL0hvX7eO/c0wi10yNfbbs73jgzNfdLj/MFVgl2z' | base64 -d | opensslpipe.sh -d 'my-secret-passwd'
 $ set -o history
 
+---:---:---
+go_401_0061 proof to be first author
+##sha256
+
+# store the text in static file
+$ vi hello-world.txt
+
+# hash the file
+$ sha256sum hello-world.txt
+
+53ebf7070d1dd57254a317f4e3ca898f3a2ebc1c017ace73e707e096a29bdc51 *hello-world.txt
+
+# publish the resulting hash, e. g. on twitter or a blockchain ...
+curl -X POST 'https://api.twitter.com/1.1/statuses/update.json?status=hello' 
+  --header 'authorization: OAuth
+  oauth_consumer_key="oauth_customer_key",
+  oauth_nonce="generated_oauth_nonce",
+  oauth_signature="generated_oauth_signature",
+  oauth_signature_method="HMAC-SHA1",
+  oauth_timestamp="generated_timestamp",
+  oauth_token="oauth_token",
+  oauth_version="1.0"'
 
 ---:---:---
 go_500_0000 ...
