@@ -15,9 +15,12 @@ go_300_0000 ...
 
 go_400_0000 ...
 go_401_0010 redirect stdin stdout stderr
+go_401_0020 windows powershell: run command elevated
 go_401_0050 Random
-go_401_0060 Encryption
+go_401_0060 encryption with openssl
 go_401_0061 proof to be first author
+
+
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -81,6 +84,16 @@ $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>
 # redirect stdout to nothing, stderr to mail, stdout + stderr to file
 $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>&2 echo "4 hello error"); } 1> >(tee stdout.log) 2> >(tee /dev/stderr | mail -s "test stderr `date`" bwinkler@netmediaeurope.com); } >> all.log 2>&1
 
+
+---:---:---
+go_401_0020 windows powershell: run command elevated
+
+# run command elevated (= as administrator), e. g. create a Windows service
+$ powershell -Command "Start-Process -Verb runAs sc.exe -ArgumentList 'create', 'MyService', 'BinPath=C:\temp\MyService.exe'"
+$ sc.exe query MyService
+
+
+
 ---:---:---
 go_401_0050 Random
 ##random
@@ -92,7 +105,7 @@ $ cat /dev/urandom | tr -cd 'a-zA-Z0-9.-' | head -c12
 $ cat /dev/urandom | head -c12 | base64
 
 ---:---:---
-go_401_0060 Encryption
+go_401_0060 encryption with openssl
 ##openssl ##encrypt ##decrypt
 
 # encrypt files
