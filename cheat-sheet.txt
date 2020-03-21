@@ -20,8 +20,6 @@ go_401_0050 Random
 go_401_0060 encryption with openssl
 go_401_0061 proof to be first author
 
-
-
 go_500_0000 ...
 go_501_0010 FFMPEG
 
@@ -31,6 +29,12 @@ go_603_0100 c# dotnet commands
 go_604_0100 java Lego Mindstorm
 
 go_700_0000 ...
+go_701_0000 mysql
+go_701_0001 mysql: manage users
+go_701_0002 mysql: change the default collation
+go_701_0003 mysql: store encrypted login on file system
+go_701_0004 mysql: dump database
+
 go_800_0000 ...
 go_900_0000 ...
 
@@ -262,3 +266,89 @@ go_604_0100 java Lego Mindstorm
 
 > nxjc HelloWorld.java
 > nxj -r -o HelloWorld.nxj HelloWorld
+
+
+
+---:---:---
+go_701_0000 mysql
+## mysql
+
+---:---:---
+go_701_0001 mysql: manage users
+
+# list users
+> use mysql;
+> SELECT User, Host FROM user ORDER BY User;
+
+# create user
+> CREATE USER 'db_user'@'localhost' IDENTIFIED BY 'my.secret.password';
+> CREATE USER 'db_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my.secret.password';
+
+# (re)set password of user
+> SET PASSWORD FOR 'db_user'@'localhost' = 'yet.very.secret.password';
+
+# change user
+> ALTER USER 'db_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my.secret.password';
+
+# delete user
+> DROP USER 'microstaxx'@'localhost';
+
+# show privileges 
+> SHOW GRANTS FOR ticket_prd;
+
+# grant privileges
+> GRANT ALL PRIVILEGES ON app_db.* TO 'db_user'@'localhost';
+> GRANT USAGE ON app_db.* TO 'db_user'@'localhost';
+> GRANT SELECT, LOCK TABLES ON app_db.* TO 'db_user'@'localhost';
+
+---:---:---
+go_701_0002 mysql: change the default collation
+
+# How to change the default collation (and default character set) of a database?
+$ start https://stackoverflow.com/questions/5906585/how-to-change-the-default-collation-of-a-database
+
+# change collation to latin1
+> ALTER DATABASE app_db CHARACTER SET latin1 COLLATE latin1_german2_ci;
+
+# change database / tables to utf8
+> use app_db;
+> ALTER DATABASE app_db CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+> ALTER TABLE table_1 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+> ALTER TABLE table_2 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+> ALTER TABLE table_3 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+> ALTER TABLE table_4 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+> ALTER TABLE app_db.table_1 MODIFY colum_1 text CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+---:---:---
+go_701_0003 mysql: store encrypted login on file system
+
+# set login (via cmd)
+> "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql_config_editor.exe" set --login-path db_user --host=db_host --user=db_user --password
+
+# set login (via powershell)
+> & 'C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql_config_editor.exe' set --login-path db_user --host=db_host --user=db_user --password
+
+# set login (via bash)
+$ mysql_config_editor set --login-path db_user --host=db_host --user=db_user --password
+
+# list all logins
+$ mysql_config_editor print --all
+
+# login to mysql
+$ mysql --login-path=db_user
+
+---:---:---
+go_701_0004 mysql: dump database
+
+# dump mysql database
+$ mysqldump -u root -p --opt --single-transaction --comments --hex-blob --dump-date --no-autocommit --add-drop-database --databases app_db > app_db-latest.sql
+
+# import exported data
+$ echo 'source app_db-latest.sql' | mysql -u root -p app_db'
+
+
+
+
+
+
