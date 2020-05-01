@@ -41,6 +41,8 @@ go_501_0010 FFMPEG
 go_600_0000 ...
 go_601_0000 git
 go_601_0010 git log: simple and well formatted
+go_601_0020 git merge: dry run
+
 go_602_0010 go(lang) in docker
 
 go_603_0100 c# dotnet commands
@@ -336,6 +338,16 @@ go_601_0010 git log: simple and well formatted
 # simple and well formatted git log output
 $ git log --pretty=format:'%C(yellow)%h %C(green)%as %C(reset)%s%C(red)%d'
 
+
+
+---:---:---
+go_601_0020 git merge: dry run
+
+# test if master has been merged into current branch
+$ git merge --no-commit --no-ff master
+$ git diff --cached --name-only
+$ git diff --cached 
+$ git merge --abort
 
 
 ---:---:---
