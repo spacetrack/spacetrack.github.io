@@ -31,6 +31,7 @@ go_403_0000 bash
 go_404_0000 windows powershell
 go_404_0010 windows powershell: run command elevated
 go_404_0020 windows powershell: send e-mail
+go_404_0030 windows powershell: taskschd windows cron
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -234,6 +235,29 @@ go_404_0020 windows powershell: send e-mail
 -From 'bjoern_winkler@gmx.de' `
 -Subject 'test from powershell' `
 -Body 'test from powershell'
+
+
+
+---:---:---
+go_404_0030 windows powershell: taskschd windows cron
+
+# credits
+> start https://blog.netwrix.com/2018/07/03/how-to-automate-powershell-scripts-with-task-scheduler/
+
+# create new task from powersehll
+> $Trigger = New-ScheduledTaskTrigger -At 4:00am –Daily
+> $User = "NT AUTHORITY\SYSTEM"
+> $Action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "C:\my-scripts\my-script.ps1"
+> Register-ScheduledTask -TaskName "MonitorGroupMembership" -Trigger $Trigger -User $User -Action $Action -RunLevel Highest –Force
+
+# create new task from powersehll: one line! ;-)
+> Register-ScheduledTask -TaskName "Dump MySQL database" -Trigger $(New-ScheduledTaskTrigger -At 4:00am –Daily) -User "NT AUTHORITY\SYSTEM" -Action $(New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "C:\scripts\mysql-dump.ps1") -RunLevel Highest –Force
+
+# check if the daily task has been configured
+> Get-ScheduledTask | Select-String Dump
+
+# check if "NextRunTime" shows tomorrow, 4:00 am
+> Get-ScheduledTaskInfo -TaskName "Dump MySQL database"
 
 
 
