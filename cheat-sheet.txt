@@ -32,6 +32,7 @@ go_404_0000 windows powershell
 go_404_0010 windows powershell: run command elevated
 go_404_0020 windows powershell: send e-mail
 go_404_0030 windows powershell: taskschd windows cron
+go_404_0040 windows powershell: find string in files
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -258,6 +259,17 @@ go_404_0030 windows powershell: taskschd windows cron
 
 # check if "NextRunTime" shows tomorrow, 4:00 am
 > Get-ScheduledTaskInfo -TaskName "Dump MySQL database"
+
+
+---:---:---
+go_404_0040 windows powershell: find string in files
+
+# credits
+> start https://stackoverflow.com/a/8153857
+
+# search a string in multiple files and return the names of files
+> Get-ChildItem -Recurse | Select-String "unsub" -List | Select Path
+
 
 
 
