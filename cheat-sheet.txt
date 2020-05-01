@@ -30,6 +30,7 @@ go_403_0000 bash
 
 go_404_0000 windows powershell
 go_404_0010 windows powershell: run command elevated
+go_404_0020 windows powershell: send e-mail
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -214,6 +215,20 @@ go_404_0010 windows powershell: run command elevated
 # run command elevated (= as administrator), e. g. create a Windows service
 > powershell -Command "Start-Process -Verb runAs sc.exe -ArgumentList 'create', 'MyService', 'BinPath=C:\temp\MyService.exe'"
 > & sc.exe query MyService
+
+
+
+---:---:---
+go_404_0020 windows powershell: send e-mail
+
+> Send-MailMessage `
+-UseSsl -Credential (Get-Credential) `
+-SmtpServer 'mail.gmx.net' `
+-Port 587 `
+-To 'bjoern.winkler+test-powershell@gmail.com' `
+-From 'bjoern_winkler@gmx.de' `
+-Subject 'test from powershell' `
+-Body 'test from powershell'
 
 
 
