@@ -26,6 +26,11 @@ go_402_0120 run a web-server with openssl
 go_402_0200 hashing
 go_402_0210 proof to be first author
 
+go_403_0000 bash
+
+go_404_0000 windows powershell
+go_404_0010 windows powershell: run command elevated
+
 go_500_0000 ...
 go_501_0010 FFMPEG
 
@@ -95,15 +100,6 @@ $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>
 
 # redirect stdout to nothing, stderr to mail, stdout + stderr to file
 $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>&2 echo "4 hello error"); } 1> >(tee stdout.log) 2> >(tee /dev/stderr | mail -s "test stderr `date`" bwinkler@netmediaeurope.com); } >> all.log 2>&1
-
-
-
----:---:---
-go_401_0020 windows powershell: run command elevated
-
-# run command elevated (= as administrator), e. g. create a Windows service
-$ powershell -Command "Start-Process -Verb runAs sc.exe -ArgumentList 'create', 'MyService', 'BinPath=C:\temp\MyService.exe'"
-$ sc.exe query MyService
 
 
 
@@ -205,6 +201,19 @@ curl -X POST 'https://api.twitter.com/1.1/statuses/update.json?status=hello'
   oauth_timestamp="generated_timestamp",
   oauth_token="oauth_token",
   oauth_version="1.0"'
+
+
+
+---:---:---
+go_404_0000 windows powershell
+go_404_0010 windows powershell: run command elevated
+
+# run command elevated (= as administrator), e. g. cmd
+> powershell -Command "Start-Process -Verb runAs cmd.exe"
+
+# run command elevated (= as administrator), e. g. create a Windows service
+> powershell -Command "Start-Process -Verb runAs sc.exe -ArgumentList 'create', 'MyService', 'BinPath=C:\temp\MyService.exe'"
+> & sc.exe query MyService
 
 
 
