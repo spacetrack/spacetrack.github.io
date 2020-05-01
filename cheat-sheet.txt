@@ -221,8 +221,13 @@ go_404_0010 windows powershell: run command elevated
 ---:---:---
 go_404_0020 windows powershell: send e-mail
 
+# credits
+> start https://blog.mailtrap.io/powershell-send-email/
+
+# send e-mail 
 > Send-MailMessage `
--UseSsl -Credential (Get-Credential) `
+-UseSsl `
+-Credential (Get-Credential) `
 -SmtpServer 'mail.gmx.net' `
 -Port 587 `
 -To 'bjoern.winkler+test-powershell@gmail.com' `
