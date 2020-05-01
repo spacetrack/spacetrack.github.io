@@ -42,7 +42,11 @@ go_600_0000 ...
 go_601_0000 git
 go_601_0010 git log: simple and well formatted
 go_602_0010 go(lang) in docker
+
 go_603_0100 c# dotnet commands
+go_603_1000 c# dotnet programming
+go_603_1010 c# dotnet programming: Refresh ASP.NET Core MVC view without reloading the application
+
 go_604_0100 java Lego Mindstorm
 
 go_700_0000 ...
@@ -370,6 +374,21 @@ $ echo $?
 > dotnet tool install -g dotnet-format
 > dotnet format --dry-run --check
 > Write-Host $LastExitCode
+
+
+---:---:---
+go_603_1000 c# dotnet programming
+go_603_1010 c# dotnet programming: Refresh ASP.NET Core MVC view without reloading the application
+
+# credits
+$ start https://dev.to/alexzeitler/refresh-asp-net-core-website-without-reloading-application-2ffo
+
+# add this NuGet package to the project: Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+$ dotnet add package 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation'
+
+# in Startup.cs change this line:
+<- `services.AddControllersWithViews();`
+-> `services.AddControllersWithViews().AddRazorRuntimeCompilation();`
 
 
 
