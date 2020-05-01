@@ -17,8 +17,13 @@ go_400_0000 ...
 go_401_0010 redirect stdin stdout stderr
 go_401_0020 windows powershell: run command elevated
 go_401_0050 Random
-go_401_0060 encryption with openssl
-go_401_0061 proof to be first author
+
+go_402_0000 crypto
+go_402_0100 openssl
+go_402_0110 encryption with openssl
+go_402_0120 run a web-server with openssl
+go_402_0200 hashing
+go_402_0210 proof to be first author
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -109,7 +114,9 @@ $ cat /dev/urandom | tr -cd 'a-zA-Z0-9.-' | head -c12
 $ cat /dev/urandom | head -c12 | base64
 
 ---:---:---
-go_401_0060 encryption with openssl
+go_402_0000 crypto
+go_402_0100 openssl
+go_402_0110 encryption with openssl
 ##openssl ##encrypt ##decrypt
 
 # encrypt files
@@ -141,7 +148,22 @@ $ echo 'U2FsdGVkX1+OdddqCYCobh5tJL0hvX7eO/c0wi10yNfbbs73jgzNfdLj/MFVgl2z' | base
 $ set -o history
 
 ---:---:---
-go_401_0061 proof to be first author
+go_402_0120 run a web-server with openssl
+##openssl ##tinywebserver
+
+# credits
+$ start https://www.devdungeon.com/content/one-line-http-servers
+
+# create a self-signed certificate (or get one from Let's Encrypt)
+$ openssl req -newkey rsa:2048 -nodes -keyout private-key.pem -x509 -days 365 -out certificate.pem
+
+# start the web server
+$ openssl s_server -key private-key.pem -cert certificate.pem -accept 8080 -WWW
+
+
+---:---:---
+go_402_0200 hashing
+go_402_0210 proof to be first author
 ##sha256
 
 # store the text in static file
