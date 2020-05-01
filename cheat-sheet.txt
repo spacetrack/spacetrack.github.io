@@ -3,19 +3,17 @@ cheat sheet
 ----------------------------------------
 https://spacetrack.github.io/cheat-sheet.txt
 ----------------------------------------
-2020-03-14, 15:00
+2020-05-01, 20:50
 ----------------------------------------
 
 
-go_000_0000 Inhalt
+go_000_0000 table of contents
 
 go_100_0000 ...
 go_200_0000 ...
 go_300_0000 ...
 
 go_400_0000 ...
-go_401_0010 redirect stdin stdout stderr
-go_401_0020 windows powershell: run command elevated
 go_401_0050 Random
 go_401_0060 curl examples
 
@@ -38,18 +36,24 @@ go_404_0040 windows powershell: find string in files
 go_500_0000 ...
 go_501_0010 FFMPEG
 
-go_600_0000 ...
+go_600_0000 development
 go_601_0000 git
 go_601_0010 git log: simple and well formatted
 go_601_0020 git merge: dry run
 
+go_602_0000 go(lang)
 go_602_0010 go(lang) in docker
+go_602_1000 go(lang) programming
 
+go_603_0000 c#
 go_603_0100 c# dotnet commands
 go_603_1000 c# dotnet programming
 go_603_1010 c# dotnet programming: Refresh ASP.NET Core MVC view without reloading the application
 
-go_604_0100 java Lego Mindstorm
+go_604_0000 java
+go_604_0100 java commmands
+go_604_0200 java Lego Mindstorm
+go_604_1000 java programming
 
 go_700_0000 ...
 go_701_0000 mysql
@@ -405,7 +409,9 @@ $ dotnet add package 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation'
 
 
 ---:---:---
-go_604_0100 java Lego Mindstorm
+go_604_0000 java
+go_604_0100 java commmands
+go_604_0200 java Lego Mindstorm
 ##mindstorm
 
 # Lego Mindstorm: first program
@@ -417,6 +423,11 @@ go_604_0100 java Lego Mindstorm
 
 > nxjc HelloWorld.java
 > nxj -r -o HelloWorld.nxj HelloWorld
+
+
+
+---:---:---
+go_604_1000 java programming
 
 
 
