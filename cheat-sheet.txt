@@ -17,6 +17,7 @@ go_400_0000 ...
 go_401_0010 redirect stdin stdout stderr
 go_401_0020 windows powershell: run command elevated
 go_401_0050 Random
+go_401_0060 curl examples
 
 go_402_0000 crypto
 go_402_0100 openssl
@@ -41,7 +42,7 @@ go_701_0003 mysql: store encrypted login on file system
 go_701_0004 mysql: dump database
 
 go_800_0000 ...
-go_900_0000 ...
+go_900_0000 misc
 
 ---:---:---
 ---:---:---
@@ -52,7 +53,7 @@ go_400_0000 ...
 ---:---:---
 go_401_0010 redirect stdin stdout stderr
 
-# see 
+# credits
 $ start http://www.tldp.org/LDP/abs/html/io-redirection.html
 
 ----------------------------------------
@@ -94,6 +95,7 @@ $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>
 $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>&2 echo "4 hello error"); } 1> >(tee stdout.log) 2> >(tee /dev/stderr | mail -s "test stderr `date`" bwinkler@netmediaeurope.com); } >> all.log 2>&1
 
 
+
 ---:---:---
 go_401_0020 windows powershell: run command elevated
 
@@ -112,6 +114,20 @@ $ cat /dev/urandom | tr -cd 'a-zA-Z0-9.-' | head -c12
 
 # get 12 random bytes
 $ cat /dev/urandom | head -c12 | base64
+
+
+
+---:---:---
+go_401_0060 curl examples
+
+# curl silent but with errors
+$ curl --insecure --silent --fail --show-error https://spacetrack.github.io/invalid/file.txt
+
+# curl with HTTP response code on output
+$ curl --insecure --silent --write-out "%{stderr}HTTP/%{http_version} %{response_code}" https://spacetrack.github.io/invalid/file.txt
+
+
+
 
 ---:---:---
 go_402_0000 crypto
@@ -147,6 +163,8 @@ $ echo 'a secret message' | opensslpipe.sh -e 'my-secret-passwd' | base64
 $ echo 'U2FsdGVkX1+OdddqCYCobh5tJL0hvX7eO/c0wi10yNfbbs73jgzNfdLj/MFVgl2z' | base64 -d | opensslpipe.sh -d 'my-secret-passwd'
 $ set -o history
 
+
+
 ---:---:---
 go_402_0120 run a web-server with openssl
 ##openssl ##tinywebserver
@@ -159,6 +177,7 @@ $ openssl req -newkey rsa:2048 -nodes -keyout private-key.pem -x509 -days 365 -o
 
 # start the web server
 $ openssl s_server -key private-key.pem -cert certificate.pem -accept 8080 -WWW
+
 
 
 ---:---:---
@@ -184,6 +203,8 @@ curl -X POST 'https://api.twitter.com/1.1/statuses/update.json?status=hello'
   oauth_timestamp="generated_timestamp",
   oauth_token="oauth_token",
   oauth_version="1.0"'
+
+
 
 ---:---:---
 go_500_0000 ...
@@ -231,9 +252,6 @@ $ ffmpeg -i "E:\data-bjw\Music\iTunes\iTunes Music\Podcasts\Adam Curry's Daily S
 $ ffmpeg -i We_Love_in_Concert_a_ha_Foot_of_the_Mountain_2009-06-19_01-35_180137.avi -ss 00:04:46 -t 1710 -ab 128000 -vb 1200000 aha-1.m4v
 $ ffmpeg -i a_ha_Documentary_Foot_of_the_Mountain_2009-06-28_01-10_180137.avi -ss 00:05:30 -t 5130 -ab 128000 -vb 1200000 aha-2.m4v
 
-
----:---:---
-go_600_0000 ...
 
 
 ---:---:---
@@ -371,6 +389,8 @@ $ echo 'source app_db-latest.sql' | mysql -u root -p app_db'
 
 
 
+---:---:---
+go_900_0000 misc
 
 
 
