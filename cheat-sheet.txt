@@ -258,13 +258,13 @@ go_404_0030 windows powershell: taskschd windows cron
 # credits
 > start https://blog.netwrix.com/2018/07/03/how-to-automate-powershell-scripts-with-task-scheduler/
 
-# create new task from powersehll
+# create new task from powershell
 > $Trigger = New-ScheduledTaskTrigger -At 4:00am –Daily
 > $User = "NT AUTHORITY\SYSTEM"
 > $Action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "C:\my-scripts\my-script.ps1"
 > Register-ScheduledTask -TaskName "MonitorGroupMembership" -Trigger $Trigger -User $User -Action $Action -RunLevel Highest –Force
 
-# create new task from powersehll: one line! ;-)
+# create new task from powershell: one line! ;-)
 > Register-ScheduledTask -TaskName "Dump MySQL database" -Trigger $(New-ScheduledTaskTrigger -At 4:00am –Daily) -User "NT AUTHORITY\SYSTEM" -Action $(New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "C:\scripts\mysql-dump.ps1") -RunLevel Highest –Force
 
 # check if the daily task has been configured
