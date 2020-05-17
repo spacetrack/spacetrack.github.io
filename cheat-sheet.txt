@@ -36,6 +36,7 @@ go_404_0040 windows powershell: find string in files
 go_410_0000 linux admin
 go_410_0010 linux version
 go_410_0015 linux reboot needed
+go_410_0100 linux ubuntu resize partition
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -308,6 +309,24 @@ go_410_0015 linux reboot needed
 # check if reboot is needed ...
 $ : ubuntu reboot needed :; test -e /var/run/reboot-required && echo 'yes, reboot required!' || echo 'no reboot needed'
 $ : centos reboot needed :; needs-restarting -r -s
+
+---:---:---
+go_410_0100 linux ubuntu resize partition
+
+# check all available or the specified block devices
+$ sudo lsblk
+
+# check free space
+$ sudo vgdisplay
+
+# increase size of partition
+$ lvresize -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+
+# increase size of file system
+$ resize2fs /dev/ubuntu-vg/ubuntu-lv
+
+# reboot
+$ sudo reboot
 
 
 ---:---:---
