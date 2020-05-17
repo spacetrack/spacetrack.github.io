@@ -35,6 +35,7 @@ go_404_0040 windows powershell: find string in files
 
 go_410_0000 linux admin
 go_410_0010 linux version
+go_410_0015 linux reboot needed
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -301,6 +302,12 @@ $ :   ubuntu version :; lsb_release -a
 $ :   centos version :; cat /etc/redhat-release
 $ : raspbian version :; cat /etc/os-release
 
+---:---:---
+go_410_0015 linux reboot needed
+
+# check if reboot is needed ...
+$ : ubuntu reboot needed :; test -e /var/run/reboot-required && echo 'yes, reboot required!' || echo 'no reboot needed'
+$ : centos reboot needed :; needs-restarting -r -s
 
 
 ---:---:---
