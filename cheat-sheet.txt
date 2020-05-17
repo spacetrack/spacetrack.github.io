@@ -33,6 +33,9 @@ go_404_0020 windows powershell: send e-mail
 go_404_0030 windows powershell: taskschd windows cron
 go_404_0040 windows powershell: find string in files
 
+go_410_0000 linux admin
+go_410_0010 linux version
+
 go_500_0000 ...
 go_501_0010 FFMPEG
 
@@ -63,6 +66,8 @@ go_701_0003 mysql: store encrypted login on file system
 go_701_0004 mysql: dump database
 
 go_800_0000 ...
+go_800_0010 raspberry pi raspi
+
 go_900_0000 misc
 
 ---:---:---
@@ -283,6 +288,18 @@ go_404_0040 windows powershell: find string in files
 # search a string in multiple files and return the names of files
 > Get-ChildItem -Recurse | Select-String "unsub" -List | Select Path
 
+
+---:---:---
+go_410_0000 linux admin
+
+---:---:---
+go_410_0010 linux version
+
+# get version of ...
+$ :    linux version :; cat /proc/version
+$ :   ubuntu version :; lsb_release -a
+$ :   centos version :; cat /etc/redhat-release
+$ : raspbian version :; cat /etc/os-release
 
 
 
@@ -508,6 +525,21 @@ $ mysqldump -u root -p --skip-opt --single-transaction --comments --hex-blob --d
 
 # import exported data
 $ echo 'source app_db-latest.sql' | mysql -u root -p app_db'
+
+
+
+---:---:---
+go_800_0010 raspberry pi raspi
+
+# (1) write image to SSD-card
+$ start https://www.raspberrypi.org/downloads/
+
+# (3) on your raspi: change configuration
+# -> Localisation Options
+# ... set keyboard, time zone and Wifi to DE
+# -> Interface Options -> SSH
+# ... enable SSH
+$ sudo raspi-config
 
 
 
