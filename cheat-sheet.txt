@@ -38,6 +38,8 @@ go_410_0010 linux version
 go_410_0015 linux reboot needed
 go_410_0100 linux ubuntu resize partition
 
+go_410_0100 tmux
+
 go_500_0000 ...
 go_501_0010 FFMPEG
 
@@ -328,6 +330,28 @@ $ resize2fs /dev/ubuntu-vg/ubuntu-lv
 # reboot
 $ sudo reboot
 
+---:---:---
+go_410_0100 tmux
+##tmux ##screen
+
+# tmux simple start
+$start https://www.sitepoint.com/tmux-a-simple-start/
+$start https://gist.github.com/henrik/1967800
+
+# new window:     CTRL+b c
+# list windows:   CTRL+b w
+# goto window:    CTRL+b <NR>
+# detach session: CTRL+b d
+
+# split window (create panes) horizontal: CTRL+b %
+# split window (create panes) vertical:   CTRL+b "
+# split window - swap panes:              CRTL+b o
+
+# tmux list detached sessions
+$ tmux ls
+
+# tmux attache session
+$ tmux a #
 
 ---:---:---
 go_500_0000 ...
