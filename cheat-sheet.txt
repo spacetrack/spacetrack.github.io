@@ -38,7 +38,7 @@ go_410_0010 linux version
 go_410_0015 linux reboot needed
 go_410_0100 linux ubuntu resize partition
 
-go_410_0100 tmux
+go_420_0001 tmux
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -331,7 +331,7 @@ $ resize2fs /dev/ubuntu-vg/ubuntu-lv
 $ sudo reboot
 
 ---:---:---
-go_410_0100 tmux
+go_420_0001 tmux
 ##tmux ##screen
 
 # tmux simple start
