@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>spacetrack.de | spacetrack.de</title>
+<style type="text/css">
+<!--
+body
+{
+	width: 750px;
+	
+	margin-left: auto;
+	margin-right: auto;
+
+	color: #666666;
+	font-family: arial;
+}
+
+a, form, input, p
+{
+	color: #666666;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #A0A0A0;
+	text-decoration: underline;
+}
+
+
+h1
+{
+	font-size: 20px;
+}
+
+#logo
+{
+	width: 750px;
+	text-align: right;
+}
+
+#nav
+{
+	width: 735px;
+	margin: 0 15px 30px 0;
+
+	text-align: right;
+
+	font-size: 11px;
+}
+
+#cont
+{
+    padding: 20px 100px;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+#cont tt
+{
+    background-color: #e0e0e0;
+    padding: 0 3px;
+}
+
+-->
+</style>
+</head>
+
+<body>
+
+<div id="logo">
+	<a href="http://spacetrack.de"><img alt="SpaceTrack.de" border="0" width="750" height="70" src="/i/st_w.gif"></a>
+</div>
+
+<div id="nav">
+	<a href="http://www.nun-ist-genug-mit-schnee.de">Nun ist genug mit Schnee!</a>
+    &nbsp;|&nbsp;
+	<a href="http://www.trayerpa.de">Tra Yerpa Tibet Terrier</a>
+    &nbsp;|&nbsp;
+	<a href="http://www.ta-yu.de">Ta-yu</a>
+    &nbsp;|&nbsp;
+	<a href="https://spacetrack.github.io">GitHub</a>
+    &nbsp;|&nbsp;
+	<a href="https://twitter.com/coke4all">Twitter</a>
+    &nbsp;|&nbsp;
+	<a href="https://www.facebook.com/bjoern.winkler">Facebook</a>
+	<br>
+</div>
+
+<div id="cont">
+<h1>BASH kann keine mehrdimensionalen Arrays ...</h1>
+
+<p>... mag man kaum glauben, ist aber so. Doch es gibt einen Ausweg:
+man kann es über key/value-Hash-Arrays simulieren, das ist aber aus
+verschiedenen Gründen unpraktisch (und deckt maximal zweidimensionale
+Arrays ab, auch wenn das meist reicht). Eine zweite Methode ist die
+Indirekte Referenz, dem "value of a value", kurz gesagt <tt>$$var</tt>,
+gut lesbar mittels <tt>${!var}</tt>.</p>
+
+<p>Ein Beispiel:</p>
+
+<p><script src="https://gist.github.com/spacetrack/d9e071e2f140bf983e3ebcc658e80d32.js"></script></p>
+
+</div>
+</body>
+</html>
