@@ -34,7 +34,9 @@ go_404_0002 windows powershell: force to use UTF-8, ascii, ...
 go_404_0010 windows powershell: run command elevated
 go_404_0020 windows powershell: send e-mail
 go_404_0030 windows powershell: taskschd windows cron
+go_404_0035 windows powershell: find file
 go_404_0040 windows powershell: find string in files
+go_404_0045 windows powershell: URL encode / decode
 
 go_410_0000 linux admin
 go_410_0010 linux version
@@ -42,6 +44,9 @@ go_410_0015 linux reboot needed
 go_410_0100 linux ubuntu resize partition
 
 go_420_0001 tmux
+
+go_421_0000 SSH
+go_421_0001 SSH: run an HTTP server on remote node and browse through local web
 
 go_500_0000 ...
 go_501_0010 FFMPEG
@@ -306,6 +311,11 @@ go_404_0030 windows powershell: taskschd windows cron
 # check if "NextRunTime" shows tomorrow, 4:00 am
 > Get-ScheduledTaskInfo -TaskName "Dump MySQL database"
 
+---:---:---
+go_404_0035 windows powershell: find file
+
+# find a file in a directory recursively
+> dir -recurse | Where-Object { $_.PSIsContainer } | Select FullName | convertto-csv
 
 ---:---:---
 go_404_0040 windows powershell: find string in files
@@ -316,6 +326,17 @@ go_404_0040 windows powershell: find string in files
 # search a string in multiple files and return the names of files
 > Get-ChildItem -Recurse | Select-String "unsub" -List | Select Path
 
+---:---:---
+go_404_0045 windows powershell: URL encode / decode
+##urlencode ##urldecode
+
+# powershell 5 URL encode/decode:
+> [uri]::EscapeDataString("hallo welt")
+> [uri]::UnescapeDataString("hallo%20welt")
+
+# powershell 6 URL encode/decode
+> [System.Web.HttpUtility]::UrlEncode("hallo welt")
+> [System.Web.HttpUtility]::UrlDecode("hallo+welt")
 
 ---:---:---
 go_410_0000 linux admin
@@ -376,6 +397,20 @@ $ tmux ls
 
 # tmux attache session
 $ tmux a #
+
+
+---:---:---
+go_421_0000 SSH
+go_421_0001 SSH: run an HTTP server on remote node and browse through local web
+
+# step 1: start a remote web server
+remote $ python3 -m http.server 25000
+
+# step 2: start a local ssh session
+local $ ssh -L 8000:localhost:25000 id@remote -N
+
+# step3: start a local browser 
+local $ start http://localhost:8000
 
 ---:---:---
 go_500_0000 ...
