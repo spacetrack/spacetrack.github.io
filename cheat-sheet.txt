@@ -30,6 +30,7 @@ go_403_0020 bash: for loops
 
 go_404_0000 windows powershell
 go_404_0001 windows powershell: get version
+go_404_0002 windows powershell: force to use UTF-8, ascii, ...
 go_404_0010 windows powershell: run command elevated
 go_404_0020 windows powershell: send e-mail
 go_404_0030 windows powershell: taskschd windows cron
@@ -237,6 +238,13 @@ go_404_0001 windows powershell: get version
 
 # get version of PowerShell
 > $PSVersionTable.PSVersion
+
+---:---:---
+go_404_0002 windows powershell: force to use UTF-8, ascii, ...
+
+# set char encoding in PowerShell version 5.1 or higher
+> $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
+> $PSDefaultParameterValues['Out-File:Encoding'] = 'ascii'
 
 ---:---:---
 go_404_0010 windows powershell: run command elevated
