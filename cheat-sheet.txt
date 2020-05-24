@@ -26,6 +26,7 @@ go_402_0210 proof to be first author
 
 go_403_0000 bash
 go_403_0010 bash: redirect stdin stdout stderr
+go_403_0020 bash: for loops
 
 go_404_0000 windows powershell
 go_404_0010 windows powershell: run command elevated
@@ -239,6 +240,14 @@ go_404_0010 windows powershell: run command elevated
 # run command elevated (= as administrator), e. g. create a Windows service
 > powershell -Command "Start-Process -Verb runAs sc.exe -ArgumentList 'create', 'MyService', 'BinPath=C:\temp\MyService.exe'"
 > & sc.exe query MyService
+
+
+---:---:---
+go_403_0020 bash: for loops
+
+$ for i in {0..9}; do echo $i; done
+$ for ((i=0;i<10;i++)){ echo $i;}
+$ for var in list; do command; done
 
 
 
