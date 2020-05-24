@@ -29,6 +29,7 @@ go_403_0010 bash: redirect stdin stdout stderr
 go_403_0020 bash: for loops
 
 go_404_0000 windows powershell
+go_404_0001 windows powershell: get version
 go_404_0010 windows powershell: run command elevated
 go_404_0020 windows powershell: send e-mail
 go_404_0030 windows powershell: taskschd windows cron
@@ -232,6 +233,12 @@ $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>
 
 ---:---:---
 go_404_0000 windows powershell
+go_404_0001 windows powershell: get version
+
+# get version of PowerShell
+> $PSVersionTable.PSVersion
+
+---:---:---
 go_404_0010 windows powershell: run command elevated
 
 # run command elevated (= as administrator), e. g. cmd
