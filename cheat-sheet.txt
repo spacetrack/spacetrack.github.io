@@ -27,6 +27,7 @@ go_402_0210 proof to be first author
 go_403_0000 bash
 go_403_0010 bash: redirect stdin stdout stderr
 go_403_0020 bash: for loops
+go_403_0030 bash: multidimensional arrays
 
 go_404_0000 windows powershell
 go_404_0001 windows powershell: get version
@@ -236,6 +237,16 @@ $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>
 
 # redirect stdout to nothing, stderr to mail, stdout + stderr to file
 $ { { echo "1 hello world"; (>&2 echo "2 hello error"); echo "3 hello world"; (>&2 echo "4 hello error"); } 1> >(tee stdout.log) 2> >(tee /dev/stderr | mail -s "test stderr `date`" bwinkler@netmediaeurope.com); } >> all.log 2>&1
+
+
+
+---:---:---
+go_403_0030 bash: multidimensional arrays
+
+# blog: how to simulate multidimensional arrays
+$ start https://spacetrack.github.io/blog/2016/bash-mehrdimensionale-arrays.html
+
+
 
 ---:---:---
 go_404_0000 windows powershell
