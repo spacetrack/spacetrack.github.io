@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2016s on SpaceTrack</title>
+    <link>https://spacetrack.github.io/2016/</link>
+    <description>Recent content in 2016s on SpaceTrack</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Fri, 15 Apr 2016 16:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://spacetrack.github.io/2016/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BASH kann keine mehrdimensionalen Arrays ...</title>
+      <link>https://spacetrack.github.io/2016/bash-mehrdimensionale-arrays/</link>
+      <pubDate>Fri, 15 Apr 2016 16:00:00 +0200</pubDate>
+      
+      <guid>https://spacetrack.github.io/2016/bash-mehrdimensionale-arrays/</guid>
+      <description>&amp;hellip; mag man kaum glauben, ist aber so. Doch es gibt einen Ausweg: man kann es über key/value-Hash-Arrays simulieren, das ist aber aus verschiedenen Gründen unpraktisch (und deckt maximal zweidimensionale Arrays ab, auch wenn das meist reicht). Eine zweite Methode ist die Indirekte Referenz, dem &amp;ldquo;value of a value&amp;rdquo;, kurz gesagt $$var, gut lesbar mittels ${!var}.
+Ein Beispiel:
+ </description>
+    </item>
+    
+  </channel>
+</rss>
