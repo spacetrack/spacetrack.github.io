@@ -36,7 +36,7 @@ go_404_0010 windows powershell: run command elevated
 go_404_0020 windows powershell: send e-mail
 go_404_0030 windows powershell: taskschd windows cron
 go_404_0035 windows powershell: find file
-go_404_0040 windows powershell: find string in files
+go_404_0040 windows powershell: find string in files (grep -r)
 go_404_0045 windows powershell: URL encode / decode
 
 go_410_0000 linux admin
@@ -329,13 +329,14 @@ go_404_0035 windows powershell: find file
 > dir -recurse | Where-Object { $_.PSIsContainer } | Select FullName | convertto-csv
 
 ---:---:---
-go_404_0040 windows powershell: find string in files
+go_404_0040 windows powershell: find string in files (grep -r)
 
 # credits
 > start https://stackoverflow.com/a/8153857
 
 # search a string in multiple files and return the names of files
 > Get-ChildItem -Recurse | Select-String "unsub" -List | Select Path
+
 
 ---:---:---
 go_404_0045 windows powershell: URL encode / decode
