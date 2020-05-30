@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="de-de">
 <head>
-	<meta name="generator" content="Hugo 0.71.1" />
     <meta charset="utf-8">
-    <title>SpaceTrack GitHub Home | SpaceTrack</title>
+    <title>BASH kann keine mehrdimensionalen Arrays ... | SpaceTrack</title>
     <link rel="stylesheet" href="/css/spacetrack.css?v=0.9.0" />
 </head>
 
@@ -32,17 +31,11 @@
 </header>
 
     <div id="content">
-<ul>
-<li><a href="cheat-sheet.txt">cheat-sheet</a></li>
-<li><a href="https://github.com/spacetrack">GitHub repositories</a></li>
-</ul>
+<h1>BASH kann keine mehrdimensionalen Arrays ...</h1>
+<p>&hellip; mag man kaum glauben, ist aber so. Doch es gibt einen Ausweg: man kann es über key/value-Hash-Arrays simulieren, das ist aber aus verschiedenen Gründen unpraktisch (und deckt maximal zweidimensionale Arrays ab, auch wenn das meist reicht). Eine zweite Methode ist die Indirekte Referenz, dem &ldquo;value of a value&rdquo;, kurz gesagt <code>$$var</code>, gut lesbar mittels <code>${!var}</code>.</p>
+<p>Ein Beispiel:</p>
+<script type="application/javascript" src="https://gist.github.com/spacetrack/d9e071e2f140bf983e3ebcc658e80d32.js"></script>
 
-
-<ul>
-    
-    <li><a href="https://spacetrack.github.io/2016/bash-mehrdimensionale-arrays/">2016-04-15 | BASH kann keine mehrdimensionalen Arrays ...</a></li>
-    
-</ul>
 
 
     </div>
