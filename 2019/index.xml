@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SpaceTrack GitHub Home on SpaceTrack</title>
-    <link>https://spacetrack.github.io/</link>
-    <description>Recent content in SpaceTrack GitHub Home on SpaceTrack</description>
+    <title>2019s on SpaceTrack</title>
+    <link>https://spacetrack.github.io/2019/</link>
+    <description>Recent content in 2019s on SpaceTrack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Thu, 14 Mar 2019 17:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://spacetrack.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://spacetrack.github.io/2019/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -24,17 +24,6 @@
   mit dabei: Otto, Zalando
   Daten bleiben beim Account-Provider, z. B. GMX -&amp;gt; kann sich damit bei allen netID-Anbietern einloggen, die Daten werden dem Shop übermittelt, aber nur jene, denen der Nutzer zustimmt
   übertragene Daten gehören dann dem Shop</description>
-    </item>
-    
-    <item>
-      <title>BASH kann keine mehrdimensionalen Arrays ...</title>
-      <link>https://spacetrack.github.io/2016/bash-mehrdimensionale-arrays/</link>
-      <pubDate>Fri, 15 Apr 2016 16:00:00 +0200</pubDate>
-      
-      <guid>https://spacetrack.github.io/2016/bash-mehrdimensionale-arrays/</guid>
-      <description>&amp;hellip; mag man kaum glauben, ist aber so. Doch es gibt einen Ausweg: man kann es über key/value-Hash-Arrays simulieren, das ist aber aus verschiedenen Gründen unpraktisch (und deckt maximal zweidimensionale Arrays ab, auch wenn das meist reicht). Eine zweite Methode ist die Indirekte Referenz, dem &amp;ldquo;value of a value&amp;rdquo;, kurz gesagt $$var, gut lesbar mittels ${!var}.
-Ein Beispiel:
- </description>
     </item>
     
   </channel>
