@@ -12,18 +12,13 @@
     
     
     <item>
-      <title>Notizen Internet World 2019: netID</title>
-      <link>https://spacetrack.github.io/2019/netid/</link>
+      <title>Notizen von der Internet World 2019</title>
+      <link>https://spacetrack.github.io/2019/inetworld-2019/</link>
       <pubDate>Thu, 14 Mar 2019 17:00:00 +0200</pubDate>
       
-      <guid>https://spacetrack.github.io/2019/netid/</guid>
-      <description>homepage: https://enid.foundation/
-  netID gedacht als Konkurrenz zu FaceBook, Google, Amazon
-  Stiftung als Betreiber des Single-Sign-On-Services
-  Initiatoren: Pro7.Sat1, RTL, United Internet
-  mit dabei: Otto, Zalando
-  Daten bleiben beim Account-Provider, z. B. GMX -&amp;gt; kann sich damit bei allen netID-Anbietern einloggen, die Daten werden dem Shop übermittelt, aber nur jene, denen der Nutzer zustimmt
-  übertragene Daten gehören dann dem Shop</description>
+      <guid>https://spacetrack.github.io/2019/inetworld-2019/</guid>
+      <description>allgemeine Stichpunkte von der Internet World 2019 (München)
+netID  homepage: https://enid.foundation/ netID gedacht als Konkurrenz zu FaceBook, Google, Amazon Stiftung als Betreiber des Single-Sign-On-Services Initiatoren: Pro7.Sat1, RTL, United Internet mit dabei: Otto, Zalando Daten bleiben beim Account-Provider, z. B. GMX -&amp;gt; kann sich damit bei allen netID-Anbietern einloggen, die Daten werden dem Shop übermittelt, aber nur jene, denen der Nutzer zustimmt übertragene Daten gehören dann dem Shop besteht seit Herbst 2018 kostenlos  </description>
     </item>
     
   </channel>
