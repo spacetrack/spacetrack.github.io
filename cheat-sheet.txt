@@ -3,7 +3,7 @@ cheat sheet
 ----------------------------------------
 https://spacetrack.github.io/cheat-sheet.txt
 ----------------------------------------
-2020-05-24, 16:00
+2020-06-03, 19:15
 ----------------------------------------
 
 
@@ -36,7 +36,7 @@ go_404_0010 windows powershell: run command elevated
 go_404_0020 windows powershell: send e-mail
 go_404_0030 windows powershell: taskschd windows cron
 go_404_0035 windows powershell: find file
-go_404_0040 windows powershell: find string in files
+go_404_0040 windows powershell: find string in files (grep -r)
 go_404_0045 windows powershell: URL encode / decode
 
 go_410_0000 linux admin
@@ -46,15 +46,22 @@ go_410_0100 linux ubuntu resize partition
 
 go_420_0001 tmux
 
-go_421_0000 SSH
-go_421_0001 SSH: run an HTTP server on remote node and browse through local web
+go_421_0000 ssh
+go_421_0001 ssh: run an HTTP server on remote node and browse through local web
 
 go_500_0000 ...
 go_501_0010 FFMPEG
 
+go_502_0000 haproxy
+go_502_0010 haproxy: validate config
+
+go_503_0000 what is my ip address
+go_503_0020 what is my ip address: get external ip address
+
 go_600_0000 development
 go_601_0000 git
 go_601_0010 git log: simple and well formatted
+go_601_0015 git tag: list tags in MAJOR-MINOR-PATCH-order
 go_601_0020 git merge: dry run
 
 go_602_0000 go(lang)
@@ -329,13 +336,14 @@ go_404_0035 windows powershell: find file
 > dir -recurse | Where-Object { $_.PSIsContainer } | Select FullName | convertto-csv
 
 ---:---:---
-go_404_0040 windows powershell: find string in files
+go_404_0040 windows powershell: find string in files (grep -r)
 
 # credits
 > start https://stackoverflow.com/a/8153857
 
 # search a string in multiple files and return the names of files
 > Get-ChildItem -Recurse | Select-String "unsub" -List | Select Path
+
 
 ---:---:---
 go_404_0045 windows powershell: URL encode / decode
@@ -411,8 +419,8 @@ $ tmux a #
 
 
 ---:---:---
-go_421_0000 SSH
-go_421_0001 SSH: run an HTTP server on remote node and browse through local web
+go_421_0000 ssh
+go_421_0001 ssh: run an HTTP server on remote node and browse through local web
 
 # step 1: start a remote web server
 remote $ python3 -m http.server 25000
@@ -469,7 +477,20 @@ $ ffmpeg -i "E:\data-bjw\Music\iTunes\iTunes Music\Podcasts\Adam Curry's Daily S
 $ ffmpeg -i We_Love_in_Concert_a_ha_Foot_of_the_Mountain_2009-06-19_01-35_180137.avi -ss 00:04:46 -t 1710 -ab 128000 -vb 1200000 aha-1.m4v
 $ ffmpeg -i a_ha_Documentary_Foot_of_the_Mountain_2009-06-28_01-10_180137.avi -ss 00:05:30 -t 5130 -ab 128000 -vb 1200000 aha-2.m4v
 
+---:---:---
+go_502_0000 haproxy
+go_502_0010 haproxy: validate config
 
+# validate haproxy configuration
+$ sudo haproxy -c -V -f /etc/haproxy/haproxy.cfg
+
+---:---:---
+go_503_0000 what is my ip address
+
+go_503_0020 what is my ip address: get external ip address
+
+# https://www.ipify.org/
+$ curl -s 'https://api.ipify.org?format=json'
 
 ---:---:---
 go_600_0000 ...
@@ -479,7 +500,11 @@ go_601_0010 git log: simple and well formatted
 # simple and well formatted git log output
 $ git log --pretty=format:'%C(yellow)%h %C(green)%as %C(reset)%s%C(red)%d'
 
+---:---:---
+go_601_0015 git tag: list tags in MAJOR-MINOR-PATCH-order
 
+# show git version tags in "correct" order as suggested by Semantic Versioning 2.0.0 (https://semver.org)
+$ git tag -l --format='%(tag) %(subject)' | tr - \\~ | sort -V | tr \\~ -
 
 ---:---:---
 go_601_0020 git merge: dry run
