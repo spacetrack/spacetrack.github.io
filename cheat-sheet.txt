@@ -611,7 +611,7 @@ $ start https://stackoverflow.com/a/39914235/13860643
 # sleep for 5 seconds
 > await new Promise(r => setTimeout(r, 2000));
 
-# sleep() functional
+# sleep() function + demo
 ```
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
