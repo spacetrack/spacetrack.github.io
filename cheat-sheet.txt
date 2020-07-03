@@ -78,6 +78,10 @@ go_604_0100 java commmands
 go_604_0200 java Lego Mindstorm
 go_604_1000 java programming
 
+go_605_0000 javascript
+go_605_1000 javascript programming
+
+
 go_700_0000 ...
 go_701_0000 mysql
 go_701_0001 mysql: manage users
@@ -592,6 +596,40 @@ go_604_0200 java Lego Mindstorm
 go_604_1000 java programming
 
 
+---:---:---
+go_605_0000 javascript
+
+---:---:---
+go_605_1000 javascript programming
+
+---:---:---
+go_605_1000 javascript programming: sleep
+
+# credits 
+$ start https://stackoverflow.com/a/39914235/13860643
+
+# sleep for 5 seconds
+> await new Promise(r => setTimeout(r, 2000));
+
+# sleep() functional
+```
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo() {
+  console.log('taking a break for 5 seconds ...');
+  await sleep(5000);
+  console.log('now showing sleep in a loop...');
+
+  for (let i = 0; i < 10; i++) {
+    await sleep(2000);
+    console.log(i);
+  }
+}
+
+demo();
+```
 
 ---:---:---
 go_701_0000 mysql
