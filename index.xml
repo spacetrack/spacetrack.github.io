@@ -21,7 +21,7 @@
 (letztes Aktualisierung: 2020-07-10 19:30:00 &amp;#43;0200 CEST)
  Bookmarks MediatR: CQRS für C#/.NET
 Simple mediator implementation in .NET, supports request/response, commands, queries, notifications and events, synchronous and async with intelligent dispatching via C# generic variance.
-DDD &amp;amp; Co
+DDD &amp;amp; Co
 2017-11-10 | Artikelserie von Golo Roden zum Thema Commands and Events, Aggregates, Event Sourcing und CQRS:
  Was an CRUD falsch ist Semantik statt CRUD Commands und Events Aggregates Event Sourcing Vom Modell zum Code CQRS Eventual Consistency Code für das Read-Model Hallo wolkenkit  </description>
     </item>
