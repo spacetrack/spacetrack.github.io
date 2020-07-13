@@ -51,6 +51,7 @@ go_421_0001 ssh: run an HTTP server on remote node and browse through local web
 
 go_500_0000 ...
 go_501_0010 FFMPEG
+go_501_0020 mstsc
 
 go_502_0000 haproxy
 go_502_0010 haproxy: validate config
@@ -480,6 +481,27 @@ $ ffmpeg -i "E:\data-bjw\Music\iTunes\iTunes Music\Podcasts\Adam Curry's Daily S
 # 00:33:16 - 00:04:46 = 1710sec
 $ ffmpeg -i We_Love_in_Concert_a_ha_Foot_of_the_Mountain_2009-06-19_01-35_180137.avi -ss 00:04:46 -t 1710 -ab 128000 -vb 1200000 aha-1.m4v
 $ ffmpeg -i a_ha_Documentary_Foot_of_the_Mountain_2009-06-28_01-10_180137.avi -ss 00:05:30 -t 5130 -ab 128000 -vb 1200000 aha-2.m4v
+
+---:---:---
+go_501_0020 mstsc
+##mstsc
+
+# credits
+$ start 'https://shortcutworld.com/Windows-Remote-Desktop/win/Windows-Remote-Desktop_Shortcuts'
+
+# start RDP session and connect to server
+> mstsc /v:<server[:port]>
+
+# start RDP session in admin mode
+> mstsc /admin
+
+# useful shortcuts in a RDP session
+-    Alt+Page Up | equals standard desktop Alt+Tab
+-  Alt+Page Down | equals standard desktop Alt+Shift+Tab
+- Ctrl+Alt+Pause | toggle client between full-screen and window mode
+-  Ctrl+Alt+Home | show connection bar when in full-screen mode
+-  Ctrl+Alt+End  | equals standard desktop Ctrl+Alt+Del
+
 
 ---:---:---
 go_502_0000 haproxy
