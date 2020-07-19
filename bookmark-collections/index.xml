@@ -6,10 +6,23 @@
     <description>Recent content in Bookmark-collections on SpaceTrack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 10 Jul 2020 19:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 17:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://spacetrack.github.io/bookmark-collections/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Matrix Messenger</title>
+      <link>https://spacetrack.github.io/bookmark-collections/matrix-messenger/</link>
+      <pubDate>Sun, 19 Jul 2020 17:00:00 +0200</pubDate>
+      
+      <guid>https://spacetrack.github.io/bookmark-collections/matrix-messenger/</guid>
+      <description>eine Sammlung nützlicher und wissenswerter Links rund um das Matrix-Messenger-Ökosystem: Basics Ressources | Tracking | News &amp;amp; Announcments
+(letztes Aktualisierung: 2020-07-19 17:00:00 &amp;#43;0200 CEST)
+ Google Keen (experimental)  https://staykeen.com/keen/gEniXFJiKbQ57zduM2ux   Basics  Matrix.org / Element (siehe auch Wikipedia) Matrix &amp;lt;&amp;ndash;&amp;gt; IRC Bridge (siehe auch Types of Bridging)   Resources tracking riot-android: Multi-account support in Settings #120
+2016-05-12 | https://github.com/vector-im/riot-android/issues/120
+tracking riot-web: Support for multiple matrix accounts #2320</description>
+    </item>
     
     <item>
       <title>CQRS</title>
@@ -24,19 +37,6 @@ Simple mediator implementation in .NET, supports request/response, commands, que
 DDD &amp;amp; Co
 2017-11-10 | Artikelserie von Golo Roden zum Thema Commands and Events, Aggregates, Event Sourcing und CQRS:
  Was an CRUD falsch ist Semantik statt CRUD Commands und Events Aggregates Event Sourcing Vom Modell zum Code CQRS Eventual Consistency Code für das Read-Model Hallo wolkenkit  </description>
-    </item>
-    
-    <item>
-      <title>Matrix Messenger</title>
-      <link>https://spacetrack.github.io/bookmark-collections/matrix-messenger/</link>
-      <pubDate>Sun, 28 Jun 2020 10:30:00 +0200</pubDate>
-      
-      <guid>https://spacetrack.github.io/bookmark-collections/matrix-messenger/</guid>
-      <description>eine Sammlung nützlicher und wissenswerter Links rund um das Matrix-Messenger-Ökosystem: Basics Ressources | Tracking | News &amp;amp; Announcments
-(letztes Aktualisierung: 2020-06-28 10:30:00 &amp;#43;0200 CEST)
- Google Keen (experimental)  https://staykeen.com/keen/gEniXFJiKbQ57zduM2ux   Basics  Matrix.org / Element (siehe auch Wikipedia) Matrix &amp;lt;&amp;ndash;&amp;gt; IRC Bridge (siehe auch Types of Bridging)   Resources tracking riot-android: Multi-account support in Settings #120
-2016-05-12 | https://github.com/vector-im/riot-android/issues/120
-tracking riot-web: Support for multiple matrix accounts #2320</description>
     </item>
     
   </channel>
