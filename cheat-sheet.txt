@@ -59,6 +59,9 @@ go_502_0010 haproxy: validate config
 go_503_0000 what is my ip address
 go_503_0020 what is my ip address: get external ip address
 
+go_590_0000 Azure
+go_590_0001 download attachments of Azure DevOps work item
+
 go_600_0000 development
 go_601_0000 git
 go_601_0010 git log: simple and well formatted
@@ -518,8 +521,34 @@ go_503_0020 what is my ip address: get external ip address
 # https://www.ipify.org/
 $ curl -s 'https://api.ipify.org?format=json'
 
+go_590_0000 Azure
+go_590_0000 download attachments of Azure DevOps work item
+
+
+---:---:---
+go_590_0000 Azure
+
+---:---:---
+go_590_0001 download attachments of an Azure DevOps work item
+
+# install Azure DevOps extension
+> az extension add --name azure-devops
+
+# init Azure DevOps login, you need a Personal Access Token for that
+> az devops login
+
+# find the work item
+> az boards query --wiql "SELECT System.ID, System.Title, System.WorkItemType, System.AreaPath, System.AssignedTo, System.State from workitems order by System.ID asc" --organization https://dev.azure.com/YOUR-ORGANIZATION
+
+# download the attachments (PowerShell)
+> (az boards work-item show --id YOUR-WORK-ITEM-ID --organization https://dev.azure.com/YOUR-ORGANIZATION | ConvertFrom-Json).relations | Where-Object { $_.rel -eq "AttachedFile" } | ForEach-Object { Invoke-WebRequest $_.url -OutFile $_.attributes.name }
+
+---:---:---
+---:---:---
 ---:---:---
 go_600_0000 ...
+---:---:---
+
 go_601_0000 git
 go_601_0010 git log: simple and well formatted
 
