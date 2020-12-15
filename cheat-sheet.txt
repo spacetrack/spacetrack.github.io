@@ -47,7 +47,9 @@ go_410_0015 linux reboot needed
 go_410_0100 linux ubuntu resize partition
 
 go_411_0000 windows admin
+go_411_0100 windows admin: when your Windows login password is going to expire
 go_411_0100 windows admin: listening to port
+
 
 go_420_0001 tmux
 
@@ -427,6 +429,14 @@ $ sudo reboot
 
 ---:---:---
 go_411_0000 windows admin
+
+---:---:---
+go_411_0101 windows admin: when your Windows login password is going to expire
+
+# print detailed information of user (PowerShell)
+> net user /domain $env:username
+
+---:---:---
 go_411_0100 windows admin: listening to port
 
 # find exe that is listening to a port 5000 on Windows
