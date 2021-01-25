@@ -40,7 +40,7 @@ go_404_0040 windows powershell: find string in files (grep -r)
 go_404_0041 windows powershell: get number of lines (wc -l)
 go_404_0045 windows powershell: URL encode / decode
 go_404_0046 windows powershell: BASE64 encode / decode
-go_404_0046 windows powershell: show history with timestamp
+go_404_0047 windows powershell: show history with timestamp
 
 go_410_0000 linux admin
 go_410_0010 linux version
@@ -391,7 +391,7 @@ go_404_0046 windows powershell: BASE64 encode / decode
 > [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("aGVsbG8gd29ybGQ="))
 
 ---:---:---
-go_404_0046 windows powershell: show history with timestamp
+go_404_0047 windows powershell: show history with timestamp
 
 # show history of commands
 > history
