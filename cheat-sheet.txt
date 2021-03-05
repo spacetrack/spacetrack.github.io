@@ -41,6 +41,7 @@ go_404_0041 windows powershell: get number of lines (wc -l)
 go_404_0045 windows powershell: URL encode / decode
 go_404_0046 windows powershell: BASE64 encode / decode
 go_404_0047 windows powershell: show history with timestamp
+go_404_0100 windows powershell: cute example
 
 go_410_0000 linux admin
 go_410_0010 linux version
@@ -401,6 +402,11 @@ go_404_0047 windows powershell: show history with timestamp
 
 # show history of commands with timestamp (long version)
 > Get-History | Format-List
+
+---:---:---
+go_404_0100 windows powershell: cute example
+
+> while(1 -eq 1){ $myGUID = [System.guid]::NewGuid().toString(); Write-Host "$(Get-Date -Format "yyyy-MM-dd HH:mm:ss") | $myGUID"; if ($myGUID[0] -eq "c") { Write-Host "$(Get-Date -Format "yyyy-MM-dd HH:mm:ss") | $myGUID" -ForegroundColor red }; Start-Sleep 0.75 }
 
 
 ---:---:---
