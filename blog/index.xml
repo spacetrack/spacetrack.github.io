@@ -12,13 +12,12 @@
     
     
     <item>
-      <title>Notizen von der OOP 2020</title>
+      <title>OOP 2020</title>
       <link>https://spacetrack.github.io/blog/2020/oop-2020/</link>
       <pubDate>Thu, 06 Feb 2020 19:00:00 +0200</pubDate>
       
       <guid>https://spacetrack.github.io/blog/2020/oop-2020/</guid>
-      <description>Stichpunkte von der OOP 2020 (München)
- AWS Fargate  sozusagen Konkurrenz zu Kubernetes geeignet für kleine Aufgaben, z. B. Batch-Jobs Serverless / Cloud Native teuer   Event Streaming - Why Apache Kafka Changes Everything  event streaming platform: messaging + data persistence the log is the center of everything producers produce data, adding it to the log consumers consume data from the log   Cross-Plattform Mobile-App-Entwicklung mit Xamarin  Xamarin.</description>
+      <description>Notizen von der OOP 2020 (München)  AWS Fargate  sozusagen Konkurrenz zu Kubernetes geeignet für kleine Aufgaben, z. B. Batch-Jobs Serverless / Cloud Native teuer   Event Streaming - Why Apache Kafka Changes Everything  event streaming platform: messaging + data persistence the log is the center of everything producers produce data, adding it to the log consumers consume data from the log   Cross-Plattform Mobile-App-Entwicklung mit Xamarin  Xamarin.</description>
     </item>
     
     <item>

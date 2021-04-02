@@ -28,8 +28,7 @@
       <pubDate>Fri, 10 Jul 2020 19:30:00 +0200</pubDate>
       
       <guid>https://spacetrack.github.io/bookmark-collections/cqrs/</guid>
-      <description>eine Sammlung nützlicher und wissenswerter Links rund um das Software-Architektur-Pattern &amp;ldquo;Command Query Responsibility&amp;rdquo; (CQRS)
-(letztes Aktualisierung: 2020-07-10 19:30:00 &amp;#43;0200 CEST)
+      <description>eine Sammlung nützlicher und wissenswerter Links rund um das Software-Architektur-Pattern &amp;ldquo;Command Query Responsibility&amp;rdquo; (CQRS) (letztes Aktualisierung: 2020-07-10 19:30:00 &amp;#43;0200 CEST)
  Bookmarks MediatR: CQRS für C#/.NET
 Simple mediator implementation in .NET, supports request/response, commands, queries, notifications and events, synchronous and async with intelligent dispatching via C# generic variance.
 DDD &amp;amp; Co
