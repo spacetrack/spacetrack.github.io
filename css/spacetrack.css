@@ -22,32 +22,36 @@ a:hover {
 	text-decoration: underline;
 }
 
-h1 {
+h1, h2, h3, h4 {
     font-family: 'Courier New', Courier, monospace;
     font-weight: normal;
+    margin: 0 0 1.25em 0;
+}
+
+h1 {
 	font-size: 28px;
 }
 
 h2 {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: normal;
 	font-size: 22px;
 }
 
 h3 {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: normal;
 	font-size: 16px;
 }
 
 h4 {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: normal;
 	font-size: 10px;
 }
 
+ul {
+    margin-block-start: 0;
+    padding-inline-start: 2em;
+
+}
+
 li {
-    line-height: 1.5em;
+    line-height: 2em;
 }
 
 #logo {

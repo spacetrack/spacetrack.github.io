@@ -40,8 +40,6 @@ go_404_0040 windows powershell: find string in files (grep -r)
 go_404_0041 windows powershell: get number of lines (wc -l)
 go_404_0045 windows powershell: URL encode / decode
 go_404_0046 windows powershell: BASE64 encode / decode
-go_404_0047 windows powershell: show history with timestamp
-go_404_0100 windows powershell: cute example
 
 go_410_0000 linux admin
 go_410_0010 linux version
@@ -49,9 +47,7 @@ go_410_0015 linux reboot needed
 go_410_0100 linux ubuntu resize partition
 
 go_411_0000 windows admin
-go_411_0100 windows admin: when your Windows login password is going to expire
 go_411_0100 windows admin: listening to port
-
 
 go_420_0001 tmux
 
@@ -392,24 +388,6 @@ go_404_0046 windows powershell: BASE64 encode / decode
 > [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("aGVsbG8gd29ybGQ="))
 
 ---:---:---
-go_404_0047 windows powershell: show history with timestamp
-
-# show history of commands
-> history
-
-# show history of commands with timestamp
-> history | fl
-
-# show history of commands with timestamp (long version)
-> Get-History | Format-List
-
----:---:---
-go_404_0100 windows powershell: cute example
-
-> while(1 -eq 1){ $myGUID = [System.guid]::NewGuid().toString(); Write-Host "$(Get-Date -Format "yyyy-MM-dd HH:mm:ss") | $myGUID"; if ($myGUID[0] -eq "c") { Write-Host "$(Get-Date -Format "yyyy-MM-dd HH:mm:ss") | $myGUID" -ForegroundColor red }; Start-Sleep 0.75 }
-
-
----:---:---
 go_410_0000 linux admin
 
 ---:---:---
@@ -449,14 +427,6 @@ $ sudo reboot
 
 ---:---:---
 go_411_0000 windows admin
-
----:---:---
-go_411_0101 windows admin: when your Windows login password is going to expire
-
-# print detailed information of user (PowerShell)
-> net user /domain $env:username
-
----:---:---
 go_411_0100 windows admin: listening to port
 
 # find exe that is listening to a port 5000 on Windows
