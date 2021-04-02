@@ -17,8 +17,7 @@
       <pubDate>Sun, 19 Jul 2020 17:00:00 +0200</pubDate>
       
       <guid>https://spacetrack.github.io/bookmark-collections/matrix-messenger/</guid>
-      <description>eine Sammlung nützlicher und wissenswerter Links rund um das Matrix-Messenger-Ökosystem: Basics Ressources | Tracking | News &amp;amp; Announcments
-(letzte Aktualisierung: 2020-07-19 17:00:00 &amp;#43;0200 CEST)
+      <description>eine Sammlung nützlicher und wissenswerter Links rund um das Matrix-Messenger-Ökosystem: Basics Ressources | Tracking | News &amp;amp; Announcments (letzte Aktualisierung: 2020-07-19 17:00:00 &amp;#43;0200 CEST)
  Weitere Bookmark Collections  &amp;ldquo;Matrix Messenger&amp;rdquo; auf Google Keen (experimental) Tag #oMtaSMinIzmf zum Matrix Messenger in meinem Zettelkasten auf Tumblr   Basics  Matrix.org / Element (siehe auch Wikipedia) Matrix &amp;lt;&amp;ndash;&amp;gt; IRC Bridge (siehe auch Types of Bridging)   Resources tracking riot-android: Multi-account support in Settings #120</description>
     </item>
     
@@ -46,17 +45,16 @@ Simple mediator implementation in .NET, supports request/response, commands, que
     </item>
     
     <item>
-      <title>Notizen von der Internet World 2019</title>
+      <title>Internet World 2019</title>
       <link>https://spacetrack.github.io/blog/2019/inetworld-2019/</link>
       <pubDate>Thu, 14 Mar 2019 17:00:00 +0200</pubDate>
       
       <guid>https://spacetrack.github.io/blog/2019/inetworld-2019/</guid>
-      <description>Stichpunkte von der Internet World 2019 (München)
- netID  homepage: https://enid.foundation/ netID gedacht als Konkurrenz zu FaceBook, Google, Amazon Stiftung als Betreiber des Single-Sign-On-Services Initiatoren: Pro7.Sat1, RTL, United Internet mit dabei: Otto, Zalando Daten bleiben beim Account-Provider, z. B. GMX -&amp;gt; kann sich damit bei allen netID-Anbietern einloggen, die Daten werden dem Shop übermittelt, aber nur jene, denen der Nutzer zustimmt übertragene Daten gehören dann dem Shop besteht seit Herbst 2018 kostenlos  </description>
+      <description>Stichpunkte von der Internet World 2019 (München)  netID  homepage: https://enid.foundation/ netID gedacht als Konkurrenz zu FaceBook, Google, Amazon Stiftung als Betreiber des Single-Sign-On-Services Initiatoren: Pro7.Sat1, RTL, United Internet mit dabei: Otto, Zalando Daten bleiben beim Account-Provider, z. B. GMX -&amp;gt; kann sich damit bei allen netID-Anbietern einloggen, die Daten werden dem Shop übermittelt, aber nur jene, denen der Nutzer zustimmt übertragene Daten gehören dann dem Shop besteht seit Herbst 2018 kostenlos  </description>
     </item>
     
     <item>
-      <title>BASH kann keine mehrdimensionalen Arrays ...</title>
+      <title>BASH: mehrdimensionalen Arrays ...</title>
       <link>https://spacetrack.github.io/blog/2016/bash-mehrdimensionale-arrays/</link>
       <pubDate>Fri, 15 Apr 2016 16:00:00 +0200</pubDate>
       
