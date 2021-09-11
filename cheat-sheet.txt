@@ -799,7 +799,7 @@ $ mysql --login-path=db_user
 go_701_0004 mysql: dump database
 
 # dump mysql database
-$ mysqldump -u root -p --skip-opt --default-character-set=utf8 --single-transaction --comments --hex-blob --dump-date --no-autocommit --add-drop-database --databases app_db > app_db-latest.sql
+$ mysqldump -u root -p --skip-opt --default-character-set=utf8 --single-transaction --no-tablespaces --comments --hex-blob --dump-date --no-autocommit --add-drop-database --databases app_db > app_db-latest.sql
 
 # import exported data
 $ echo 'source app_db-latest.sql' | mysql -u root -p --default-character-set=utf8 app_db'
