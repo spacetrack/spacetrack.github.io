@@ -1,5 +1,5 @@
-2007-08-21T17:17:00+02:00testing twitter: https://twitter.com/coke4all/status/218207272?t=n7K6t328aQHZUu1F6A0zmQ&s=19
+2007-08-21T17:17:00+02:00	testing twitter: https://twitter.com/coke4all/status/218207272?t=n7K6t328aQHZUu1F6A0zmQ&s=19
 2020-05-17T20:45:00+00:00	hello world of twtxt
 2020-06-19T14:30:00+02:00	good bye Microstaxx
 2020-07-01T09:00:00+02:00	hello Step Ahead
-2022-04-27T01:51-00+02:00testing mastodon: https://mastodon.social/@coke4all/108201055851421610
+2022-04-27T01:51-00+02:00	testing mastodon: https://mastodon.social/@coke4all/108201055851421610
