@@ -1,5 +1,10 @@
 2007-08-21T17:17:00+02:00	testing twitter: https://twitter.com/coke4all/status/218207272?t=n7K6t328aQHZUu1F6A0zmQ&s=19
+2012-04-03T19:00:00+02:00	Finally. Instagram for Android https://www.instagram.com/p/I9-WgREflu/?igshid=MTc4MmM1YmI2Ng%3D%3D
+2018-01-08T09:00:00+02:00	hello Microstaxx
 2020-05-17T20:45:00+00:00	hello world of twtxt
 2020-06-19T14:30:00+02:00	good bye Microstaxx
 2020-07-01T09:00:00+02:00	hello Step Ahead
-2022-04-27T01:51-00+02:00	testing mastodon: https://mastodon.social/@coke4all/108201055851421610
+2022-04-27T01:51:00+02:00	testing mastodon: https://mastodon.social/@coke4all/108201055851421610
+2023-07-02T23:42:39+02:00	testing nostr: https://snort.social/e/nevent1qqsp7u0s2ea9em2tjdaxhvmev6yqu3a7r94jjztau4e9jrz96msqmrgppemhxue69uhkummn9ekx7mp0270qx2
+2023-07-06T04:54:00+02:00	testing threads: https://www.threads.net/t/CuVwNlDoBO6/?igshid=NTc4MTIwNjQ2YQ==
+2023-08-14T22:41:00+02:00	testing bluesky: https://bsky.app/profile/coke4all.bsky.social/post/3k4x2g25tsm2g
