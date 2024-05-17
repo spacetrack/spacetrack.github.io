@@ -8,3 +8,4 @@
 2023-07-02T23:42:39+02:00	testing nostr: https://snort.social/e/nevent1qqsp7u0s2ea9em2tjdaxhvmev6yqu3a7r94jjztau4e9jrz96msqmrgppemhxue69uhkummn9ekx7mp0270qx2
 2023-07-06T04:54:00+02:00	testing threads: https://www.threads.net/t/CuVwNlDoBO6/?igshid=NTc4MTIwNjQ2YQ==
 2023-08-14T22:41:00+02:00	testing bluesky: https://bsky.app/profile/coke4all.bsky.social/post/3k4x2g25tsm2g
+2024-05-17T22:00:00+02:00	testing maven: https://app.heymaven.com/discover/57252
